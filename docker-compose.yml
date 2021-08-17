@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  msfcoop-postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "msfcoop@123"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  msfcoop:
+    image: registry.cn-hangzhou.aliyuncs.com/akkuman/metasploit-coop:1.0.20210817
+    environment:
+      HOMADOS_PG_USER: postgres
+      HOMADOS_PG_PASS: msfcoop@123
+      HOMADOS_PG_SERVER: msfcoop-postgres
+      HOMADOS_PG_PORT: 5432
+      MSF_HOST: 127.0.0.1
+      MSF_JSONRPC_PORT: 55554
+      MSF_WS_JSON_RPC_API_TOKEN: msfcoop
+      USERNAME: msfcoop
+      PASSWORD: DptbHd8R
+    command: bash -c "cd /root && python3 initdb.py && supervisord -c /etc/supervisor/supervisord.conf"
+    ports:
+      - "60443:443"
+      - "7000-7500:7000-7500"
+    depends_on:
+      - msfcoop-postgres
