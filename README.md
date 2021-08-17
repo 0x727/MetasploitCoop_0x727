@@ -66,13 +66,13 @@ $ sudo docker-compose up -d
 可以使用 `docker-compose logs` 进行日志查看，当出现如下字样表示启动成功
 
 ```
-2021-08-17 14:01:24,100 INFO supervisord started with pid 1
-2021-08-17 14:01:25,102 INFO spawned: 'homados' with pid 47
-2021-08-17 14:01:25,103 INFO spawned: 'msfrpcd' with pid 48
-2021-08-17 14:01:25,104 INFO spawned: 'nginx' with pid 49
-2021-08-17 14:01:26,595 INFO success: homados entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
-2021-08-17 14:01:26,595 INFO success: msfrpcd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
-2021-08-17 14:01:26,595 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+INFO supervisord started with pid 1
+INFO spawned: 'homados' with pid 47
+INFO spawned: 'msfrpcd' with pid 48
+INFO spawned: 'nginx' with pid 49
+INFO success: homados entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+INFO success: msfrpcd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 ```
 
 #### 环境变量额外说明（可选）
@@ -106,9 +106,9 @@ TENCENT_TRANSLATE_TOKEN_KEY # 腾讯翻译君 api 的 SecretKey
 
 ![](./doc/images/step4.png)
 
-**注意**：此处的端口号需要对应 [docker-compose.yml](./docker-compose.yml) 中的 `7000-7500` 范围，不然无法监听，此处的监听地址不要填写 `0.0.0.0`，因为后面我们根据该监听生成木马的时候需要这个 ip 用来回连。
+**注意**：此处的端口号需要对应 [docker-compose.yml](./docker-compose.yml) 中的 `7000-7500` 范围，不然无法监听，此处的监听地址不要填写 `0.0.0.0`，因为后面我们根据该监听生成payload的时候需要这个 ip 用来回连。
 
-生成监听任务后，我们可以在任务管理中找到它，右键它可以生成木马
+生成监听任务后，我们可以在任务管理中找到它，右键它可以生成payload
 
 ![](./doc/images/step5.png)
 
@@ -116,7 +116,7 @@ TENCENT_TRANSLATE_TOKEN_KEY # 腾讯翻译君 api 的 SecretKey
 
 ![](./doc/images/step6.png)
 
-这里一些生成木马的选项和 [Metasploit Framework](https://www.metasploit.com/) 类似，就不再赘述了。
+这里一些生成payload的选项和 [Metasploit Framework](https://www.metasploit.com/) 类似，就不再赘述了。
 
 执行上线后会有提示。
 
