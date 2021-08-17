@@ -57,6 +57,8 @@
 
 很多人询问该项目相比于 [Viper](https://github.com/FunnyWolf/Viper) 有哪些区别？
 
+以下是一些已知区别
+
 1. 单用户和多用户，viper使用多个用户可使用单账号root进行登录使用，MetasploitCoop 允许注册用户进行使用
 2. msf console
   - viper 整体面向单用户，对于msf console采用多端同步输入方案，也就是A和B用户同时登录平台打开console，A用户输入的内容会实时同步到B用户屏幕上
