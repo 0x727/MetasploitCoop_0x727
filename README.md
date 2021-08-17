@@ -140,6 +140,10 @@ TENCENT_TRANSLATE_TOKEN_KEY # 腾讯翻译君 api 的 SecretKey
 
 ![](./doc/images/step11.png)
 
+管理后台支持**添加右键自定义菜单、模块翻译管理、进程高亮管理等配置**
+
+![](./doc/images/step12.png)
+
 **更多功能等你探索**
 
 
