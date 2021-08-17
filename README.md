@@ -140,6 +140,7 @@ TENCENT_TRANSLATE_TOKEN_KEY # 腾讯翻译君 api 的 SecretKey
 
 ![](./doc/images/step11.png)
 
+**更多功能等你探索**
 
 
 ## Change Log
