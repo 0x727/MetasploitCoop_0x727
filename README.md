@@ -53,6 +53,18 @@
 
 - **理论上支持绝大多数 [Metasploit Framework](https://www.metasploit.com/) 模块，不需要对模块进行任何修改，也就是说，写一个 [Metasploit Framework](https://www.metasploit.com/) 模块就能在 [MetasploitCoop](https://github.com/0x727/MetasploitCoop) 中使用该模块**
 
+### 和 [Viper](https://github.com/FunnyWolf/Viper) 的区别
+
+很多人询问该项目相比于 [Viper](https://github.com/FunnyWolf/Viper) 有哪些区别？
+
+1. 单用户和多用户，viper使用多个用户可使用单账号root进行登录使用，MetasploitCoop 允许注册用户进行使用
+2. msf console
+  - viper 整体面向单用户，对于msf console采用多端同步输入方案，也就是A和B用户同时登录平台打开console，A用户输入的内容会实时同步到B用户屏幕上
+  - MetasploitCoop 针对 msf console 做了多实例间的隔离，各个用户之间的输入并不干扰或污染环境
+3. 模块方面，这一部分主要是两个项目的侧重点不同
+  - viper 要想利用 msf 中的模块需要改写原有的 msf 模块才能进行使用（原因：侧重于对于 msf 的定制化尽量少，能使用模块实现的就使用模块进行实现，并和python中间层之间利用redis来进行消息的发布订阅）
+  - MetasploitCoop 理论上可以直接使用绝大部分 msf 模块，除了一些特殊模块，比如 screenshare 之类的模块会在本地生成一个 html 然后打开，这部分模块暂不支持（原因：MetasploitCoop 走的另一个方向，对于 msf 的定制化程度稍高一些，所以对这些情况做了特殊处理）
+
 ## 快速开始体验
 
 ### DockerCompose
