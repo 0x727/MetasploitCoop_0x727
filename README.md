@@ -58,7 +58,7 @@
 ### DockerCompose
 
 ```bash
-$ git clone https://github.com/0x727/MetasploitCoop.git
+$ git clone https://github.com/0x727/MetasploitCoop_0x727.git
 $ cd MetasploitCoop
 $ sudo docker-compose up -d
 ```
